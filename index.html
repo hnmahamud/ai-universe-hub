@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI</title>
+    <!-- Moment JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/9070a33600.js" crossorigin="anonymous"></script>
+    <!-- DaisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.3/dist/full.css" rel="stylesheet" type="text/css" />
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body onload="loadData()" class="w-[95%] md:w-[80%] mx-auto">
+    <!-- Header Section -->
+    <header>
+        <section class="text-center mt-12">
+            <h1 class="text-gray-600 text-3xl md:text-4xl font-black mb-8">AI Universe Hub</h1>
+            <button onclick="sortDataByDate()" class="btn btn-xs">Sort By Date</button>
+        </section>
+    </header>
+
+    <!-- Main Section -->
+    <main>
+        <section class="mt-12">
+            <!-- Loading animation -->
+            <div id="loader" class="hidden mt-20">
+                <div class="flex items-center justify-center">
+                    <div class="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+                        role="status">
+                        <span
+                            class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Loading...</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <input type="checkbox" id="my-modal-5" class="modal-toggle" />
+            <div class="modal">
+                <div class="modal-box w-11/12 max-w-5xl">
+                    <div id="modal-container" class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <!-- Display dynamic modal data here... -->
+                    </div>
+                    <div class="modal-action">
+                        <button onclick="modalShow(false)" class="btn btn-xs">Close</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cards -->
+            <div id="card-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-12">
+                <!-- Display all dynamic cards here... -->
+            </div>
+            <!-- Show all button -->
+            <div id="see-more-btn" class="text-center mb-12 hidden">
+                <button onclick="displayData(false, true, false); seeMoreBtnVisibility(false);" class="btn btn-wide">See
+                    More</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/display.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
